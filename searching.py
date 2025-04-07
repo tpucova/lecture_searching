@@ -53,6 +53,19 @@ def pattern_search_while(sequence, pattern):
             index += 1
     return pos
 
+def binary_search(sequence, searched_number):
+    left = 0
+    right = len(sequence) - 1
+    while right >= left:
+        middle = (left + right) // 2
+        print(sequence[middle])
+        if sequence[middle] == searched_number:
+            return middle
+        elif sequence[middle] > searched_number:
+            right = middle - 1
+        elif sequence[middle] < searched_number:
+            left = middle + 1
+    return None
 
 
 
@@ -73,4 +86,5 @@ def main():
 
 
 if __name__ == '__main__':
+    searched_index = binary_search([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12], 9)
     main()
