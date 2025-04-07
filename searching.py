@@ -20,15 +20,27 @@ def read_data(file_name, field):
             print(f"Field {field} does not exist.")
             return None
 
+def linear_search(list_of_numbers, number):
+    indexes = []
+    for index, element in enumerate(list_of_numbers):
+        if element == number:
+            indexes.append(index)
+        else:
+            pass
+    return {"positions": indexes, "count": len(indexes)}
+
 
 
 
 def main():
-    pass
+    json_filename = "sequential.json"
+    sequential_data = read_data(json_filename, "unordered_numbers")
+    print(sequential_data)
+
+    found_numbers = linear_search(sequential_data,0)
+    print(found_numbers)
 
 
 if __name__ == '__main__':
+
     main()
-    json_filename = "sequential.json"
-    sequential_data  = read_data(json_filename, "unordered_numbers")
-    print(sequential_data )
